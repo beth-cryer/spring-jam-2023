@@ -1,0 +1,6 @@
+[
+  {"Name":"Saturn", "Text":"Ahhhhh....a human"},
+  {"Name":"Saturn", "Text":"I gather you have come to gaze upon mine rings?"},
+  {"Name":"Jupiter", "Text":"hiiiiiiiiiiiiii hehe"},
+  {"Name":"Jupiter", "Text":"care to pass the boof?", "Options":["Yes", "No"]}
+]
