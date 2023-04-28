@@ -6,6 +6,7 @@ export(float) var textSpeed = 0.05
 var dialog
 var phraseNum = 0
 var finished = false
+var options = []
 var waitingForResponse = false
 
 # Called when the node enters the scene tree for the first time.
@@ -58,8 +59,9 @@ func nextPhrase() -> void:
 	
 	#Options (don't do next phrase until option picked)
 	if dialog[phraseNum].has("Options"):
-		for opt in dialog[phraseNum]["Options"]:
-			$Options.bbcode_text += opt + "\n"
+		options = dialog[phraseNum]["Options"]
+		for i in range(options.size()):
+			$Options.bbcode_text += str(i+1) + ". " + options[i] + "\n"
 		waitingForResponse = true
 		return
 
@@ -69,13 +71,15 @@ func nextPhrase() -> void:
 
 func _process(delta):
 	if waitingForResponse:
-		#iterate through number key for each possible Option - output response somehow lol
-		
-		if Input.is_action_just_pressed("ui_accept"):
-			finished = true
-			phraseNum += 1
-		else:
+		for i in range(options.size()):
+			if Input.is_action_just_pressed("opt_"+str(i+1)):
+				finished = true
+				phraseNum += 1
+				#output result somehow idk
+		if !finished:
 			return
+		else:
+			nextPhrase()
 	
 	$Indicator.visible = finished
 	if Input.is_action_just_pressed("ui_accept"):
