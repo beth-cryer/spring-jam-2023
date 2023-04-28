@@ -1,0 +1,363 @@
+[gd_scene load_steps=45 format=2]
+
+[ext_resource path="res://textures/telescope.png" type="Texture" id=2]
+[ext_resource path="res://prefabs/Tree2_1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://prefabs/Tree1_1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://shaders/sway.gdshader" type="Shader" id=5]
+[ext_resource path="res://textures/grass1.png" type="Texture" id=6]
+[ext_resource path="res://textures/grass2.png" type="Texture" id=7]
+[ext_resource path="res://textures/grass3.png" type="Texture" id=8]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=9]
+[ext_resource path="res://prefabs/CameraFirstPerson.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scripts/Telescope.gd" type="Script" id=11]
+[ext_resource path="res://scripts/CameraThirdPerson.gd" type="Script" id=12]
+[ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://textures/saturn.png" type="Texture" id=14]
+[ext_resource path="res://textures/mars.png" type="Texture" id=15]
+[ext_resource path="res://textures/jupiter.png" type="Texture" id=16]
+[ext_resource path="res://textures/neptune.png" type="Texture" id=17]
+[ext_resource path="res://textures/mercury.png" type="Texture" id=18]
+[ext_resource path="res://textures/venus.png" type="Texture" id=19]
+[ext_resource path="res://textures/uranus.png" type="Texture" id=20]
+[ext_resource path="res://textures/sky.png" type="Texture" id=21]
+[ext_resource path="res://textures/lantern.png" type="Texture" id=22]
+[ext_resource path="res://textures/player_walk.png" type="Texture" id=23]
+
+[sub_resource type="PanoramaSky" id=24]
+panorama = ExtResource( 21 )
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 24 )
+ambient_light_color = Color( 0.376471, 0.517647, 1, 1 )
+ambient_light_energy = 0.1
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.423529, 0.560784, 0.223529, 1 )
+
+[sub_resource type="BoxShape" id=14]
+extents = Vector3( 0.247577, 0.424944, 0.0505223 )
+
+[sub_resource type="SpatialMaterial" id=26]
+flags_transparent = true
+albedo_texture = ExtResource( 23 )
+rim_enabled = true
+rim = 0.3
+rim_tint = 1.0
+
+[sub_resource type="Animation" id=27]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player_Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "idle"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player_Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "walk"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player_Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 0 ]
+}
+
+[sub_resource type="SpatialMaterial" id=25]
+flags_transparent = true
+albedo_texture = ExtResource( 22 )
+rim_enabled = true
+rim = 0.3
+rim_tint = 1.0
+
+[sub_resource type="ShaderMaterial" id=11]
+shader = ExtResource( 5 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.5
+shader_param/metallic = 0.0
+shader_param/roughness = 1.0
+shader_param/point_size = 1.0
+shader_param/rim = 0.3
+shader_param/rim_tint = 1.0
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/amplitude = 0.025
+shader_param/speed = 1.0
+shader_param/texture_albedo = ExtResource( 6 )
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = ExtResource( 5 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.5
+shader_param/metallic = 0.0
+shader_param/roughness = 1.0
+shader_param/point_size = 1.0
+shader_param/rim = 0.3
+shader_param/rim_tint = 1.0
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/amplitude = 0.025
+shader_param/speed = 1.0
+shader_param/texture_albedo = ExtResource( 7 )
+
+[sub_resource type="ShaderMaterial" id=13]
+shader = ExtResource( 5 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.5
+shader_param/metallic = 0.0
+shader_param/roughness = 1.0
+shader_param/point_size = 1.0
+shader_param/rim = 0.3
+shader_param/rim_tint = 1.0
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/amplitude = 0.025
+shader_param/speed = 1.0
+shader_param/texture_albedo = ExtResource( 8 )
+
+[sub_resource type="SpatialMaterial" id=4]
+flags_transparent = true
+albedo_texture = ExtResource( 2 )
+rim_enabled = true
+rim = 0.3
+rim_tint = 1.0
+
+[sub_resource type="SpatialMaterial" id=16]
+flags_unshaded = true
+albedo_texture = ExtResource( 14 )
+
+[sub_resource type="SpatialMaterial" id=21]
+flags_unshaded = true
+albedo_texture = ExtResource( 14 )
+
+[sub_resource type="SpatialMaterial" id=17]
+flags_unshaded = true
+albedo_texture = ExtResource( 15 )
+
+[sub_resource type="SpatialMaterial" id=18]
+flags_unshaded = true
+albedo_texture = ExtResource( 16 )
+
+[sub_resource type="SpatialMaterial" id=19]
+flags_unshaded = true
+albedo_texture = ExtResource( 17 )
+
+[sub_resource type="SpatialMaterial" id=23]
+flags_unshaded = true
+albedo_texture = ExtResource( 20 )
+
+[sub_resource type="SpatialMaterial" id=20]
+flags_unshaded = true
+albedo_texture = ExtResource( 18 )
+
+[sub_resource type="SpatialMaterial" id=22]
+flags_unshaded = true
+albedo_texture = ExtResource( 19 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 20
+outline_size = 1
+outline_color = Color( 0.411765, 0.313726, 0.486275, 1 )
+font_data = ExtResource( 13 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
+
+[node name="Ground" type="CSGBox" parent="."]
+use_collision = true
+width = 77.2164
+height = 1.0
+depth = 96.6496
+material = SubResource( 1 )
+
+[node name="CameraThirdPerson" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.267, 1.061 )
+current = true
+script = ExtResource( 12 )
+
+[node name="CameraFirstPerson" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.552592, 1.22886, -2.71558 )
+
+[node name="Moon" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.12658, -2.21849 )
+light_color = Color( 0.278431, 0.360784, 0.423529, 1 )
+omni_range = 14.553
+omni_attenuation = 2.63902
+
+[node name="Fire" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.297505, 1.2768, -2.68188 )
+light_color = Color( 0.772549, 0.47451, 0.407843, 1 )
+light_energy = 2.467
+omni_range = 2.454
+omni_attenuation = 2.92818
+
+[node name="PlayerNode" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.945, -2.307 )
+
+[node name="Player" type="KinematicBody" parent="PlayerNode"]
+script = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PlayerNode/Player"]
+shape = SubResource( 14 )
+
+[node name="Player_Sprite" type="Sprite3D" parent="PlayerNode/Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0183054, 0 )
+material_override = SubResource( 26 )
+shaded = true
+texture = ExtResource( 23 )
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerNode/Player"]
+anims/RESET = SubResource( 27 )
+anims/idle = SubResource( 29 )
+anims/walk = SubResource( 28 )
+
+[node name="Scenery" type="Spatial" parent="."]
+
+[node name="Lantern" type="Sprite3D" parent="Scenery"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.223226, 0.659696, -2.96974 )
+material_override = SubResource( 25 )
+shaded = true
+texture = ExtResource( 22 )
+
+[node name="Tree1_1" parent="Scenery" instance=ExtResource( 4 )]
+
+[node name="Tree2_1" parent="Scenery" instance=ExtResource( 3 )]
+
+[node name="Tree2_2" parent="Scenery" instance=ExtResource( 3 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, -3.02995, 1.42137, -5.96284 )
+
+[node name="Grass1_1" type="Sprite3D" parent="Scenery"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 1.15234, 0.6, -3.24453 )
+material_override = SubResource( 11 )
+shaded = true
+texture = ExtResource( 6 )
+
+[node name="Grass1_2" type="Sprite3D" parent="Scenery"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 0.819826, 0.6, -0.48506 )
+material_override = SubResource( 11 )
+shaded = true
+texture = ExtResource( 6 )
+
+[node name="Grass2_1" type="Sprite3D" parent="Scenery"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, -1.87097, 0.587037, -2.46688 )
+material_override = SubResource( 12 )
+texture = ExtResource( 7 )
+
+[node name="Grass2_2" type="Sprite3D" parent="Scenery"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 2.28749, 0.587037, -4.2036 )
+material_override = SubResource( 12 )
+texture = ExtResource( 7 )
+
+[node name="Grass3_1" type="Sprite3D" parent="Scenery"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 0.472647, 0.6, -0.293636 )
+material_override = SubResource( 13 )
+texture = ExtResource( 8 )
+
+[node name="Telescope" type="Sprite3D" parent="Scenery"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.515507, 0.776426, -2.59546 )
+material_override = SubResource( 4 )
+shaded = true
+texture = ExtResource( 2 )
+script = ExtResource( 11 )
+
+[node name="Planets" type="Spatial" parent="."]
+
+[node name="Saturn" type="CSGSphere" parent="Planets"]
+transform = Transform( 1, 0, 0, 0, 0.811482, -0.584377, 0, 0.584377, 0.811482, -0.687079, 11.8938, -12.0952 )
+use_collision = true
+material = SubResource( 16 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="Planets/Saturn"]
+radius = 1.93607
+height = 0.0813776
+sides = 16
+material = SubResource( 21 )
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="Planets/Saturn/CSGCylinder"]
+operation = 2
+radius = 1.83747
+height = 0.0813776
+sides = 16
+
+[node name="Mars" type="CSGSphere" parent="Planets"]
+transform = Transform( 1, 0, 0, 0, 0.992317, 0.123723, 0, -0.123723, 0.992317, -17.3704, 11.2031, -7.23968 )
+use_collision = true
+material = SubResource( 17 )
+
+[node name="Jupiter" type="CSGSphere" parent="Planets"]
+transform = Transform( 1.69515, 1.05319, 0.131313, -1.06135, 1.68213, 0.209729, 0, -0.247445, 1.98463, -24.093, 30.347, 18.335 )
+use_collision = true
+material = SubResource( 18 )
+
+[node name="Neptune" type="CSGSphere" parent="Planets"]
+transform = Transform( 1.5, 0, 0, 0, 1.48848, 0.185584, 0, -0.185584, 1.48848, 10.2777, 23.1315, 1.1613 )
+use_collision = true
+material = SubResource( 19 )
+
+[node name="Uranus" type="CSGSphere" parent="Planets"]
+transform = Transform( 1.5, 0, 0, 0, 1.48848, 0.185584, 0, -0.185584, 1.48848, 19.9972, 23.1315, -17.2442 )
+use_collision = true
+material = SubResource( 23 )
+
+[node name="Mercury" type="CSGSphere" parent="Planets"]
+transform = Transform( 1.2, 0, 0, 0, 1.19078, 0.148467, 0, -0.148467, 1.19078, 10.2777, 17.0909, 13.6312 )
+use_collision = true
+material = SubResource( 20 )
+
+[node name="Venus" type="CSGSphere" parent="Planets"]
+transform = Transform( 1.5, 0, 0, 0, 1.48848, 0.185584, 0, -0.185584, 1.48848, -4.07385, 17.0909, 13.6312 )
+use_collision = true
+material = SubResource( 22 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HoverText" type="RichTextLabel" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.35
+margin_right = 128.0
+margin_bottom = 34.0
+custom_fonts/normal_font = SubResource( 15 )
+text = "TESTINGINGJG"
+fit_content_height = true

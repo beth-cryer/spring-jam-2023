@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://shaders/sway.gdshader" type="Shader" id=1]
+[ext_resource path="res://textures/tree1.png" type="Texture" id=2]
+
+[sub_resource type="ShaderMaterial" id=17]
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.5
+shader_param/metallic = 0.0
+shader_param/roughness = 1.0
+shader_param/point_size = 1.0
+shader_param/rim = 0.3
+shader_param/rim_tint = 1.0
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/amplitude = 0.025
+shader_param/speed = 1.0
+shader_param/texture_albedo = ExtResource( 2 )
+
+[sub_resource type="CylinderShape" id=15]
+height = 0.804204
+radius = 0.106386
+
+[node name="Tree1_1" type="KinematicBody"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 1.8734, 1.42337, -4.64494 )
+
+[node name="Tree1_Sprite" type="Sprite3D" parent="."]
+material_override = SubResource( 17 )
+shaded = true
+texture = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0861841, -0.0625471, 0 )
+shape = SubResource( 15 )
