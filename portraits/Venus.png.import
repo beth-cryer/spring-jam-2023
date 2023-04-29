@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Saturn.png-b7ac8eca0941b51341ef7f3ecb9f2cae.stex"
+path="res://.import/Venus.png-1a5798a909284e7f5e86f37aec7531e9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://portraits/Saturn.png"
-dest_files=[ "res://.import/Saturn.png-b7ac8eca0941b51341ef7f3ecb9f2cae.stex" ]
+source_file="res://portraits/Venus.png"
+dest_files=[ "res://.import/Venus.png-1a5798a909284e7f5e86f37aec7531e9.stex" ]
 
 [params]
 
