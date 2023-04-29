@@ -1,0 +1,4 @@
+[
+    {"Name":"Jupiter", "Text":"heh...eh he....hhehe....."},
+    {"Name":"Jupiter", "Text":"howre u doin....", "Options":[{"Text":"Good, thanks!","Link":"Jupiter_Dialog1_Part1_Good"}, {"Text":"Ehhh", "Link":"Jupiter_Dialog1_Part1_Bad"}]}
+]

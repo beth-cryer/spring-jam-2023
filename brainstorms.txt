@@ -3,6 +3,13 @@ GAME STRUCTURE:
 -Do something for the planet/resolve their problem
 -At any point, you can choose one planet and finish their storyline (happy ending!! :3)
 
+planetname_dialog_stage : int
+planetname_quest_done: bool
+
+DIALOG STRUCTURE
+
+Name, Emotion, Text, Options?, Link?, Set Flag?, Condition?
+Options: [Text, Link?, Set Flag? Condition?]
 
 JUPITER: chill, stoner, bit mischievous. will fuck with u but ultimately respectful
 

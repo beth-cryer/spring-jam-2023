@@ -1,0 +1,8 @@
+[
+    {"Name":"Jupiter", "Text":"aww dude nooo no way dudeeee im sorry"},
+    {"Name":"Jupiter", "Text":"heyyyy.....tell u what"},
+    {"Name":"Jupiter", "Text":"how about we take a trip to the milky way"},
+    {"Name":"Jupiter", "Text":"if u know what im sayin hahah....."},
+    {"Name":"Jupiter", "Text":"....i am referring to Drug Usage"},
+    {"Name":"Jupiter", "Text":"are u in.....", "Options":[{"Text":"That sounds cool", "Link":"Jupiter_Dialog1_Part2_Yes"},{"Text":"My mum told me drugs give you cancer", "Link":"Jupiter_Dialog1_Part2_No"}]}
+]
