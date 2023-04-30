@@ -13,6 +13,7 @@ func _ready():
 	InteractLabel.hide()
 
 func checkCondition():
+	if condition.size() == 0: return true
 	if GameController.flags_dict.has(condition["Var"]):
 		return str(GameController.flags_dict.get(condition["Var"])) == condition["Val"]
 

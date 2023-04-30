@@ -1,0 +1,4 @@
+[
+    {"Name":"", "Text":"It's a dirty old mirror hidden in the grass"},
+    {"Name":"", "Text":"This looks like the reflective thing Saturn was talking about?", "Condition":{"Var":"Saturn_Angered", "Val":false}, "Options":[{"Text":"Pick it up","SetFlag":{"Var":"Saturn_Mirror", "Val":true}, "Condition":{"Var":"Jupiter_Mushroom", "Val":false}}, {"Text":"Leave it"}]}
+]

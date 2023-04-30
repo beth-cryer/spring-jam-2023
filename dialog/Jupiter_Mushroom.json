@@ -1,4 +1,4 @@
 [
     {"Name":"", "Text":"This looks like a common mushroom. These start growing here around spring time every year."},
-    {"Name":"", "Text":"Jupiter might like these?", "Options":[{"Text":"Pick it up","SetFlag":{"Var":"Jupiter_Mushroom", "Val":true}, "Condition":{"Var":"Jupiter_Mushroom", "Val":false}}, {"Text":"Leave it"}]}
+    {"Name":"", "Text":"Jupiter might like these?", "Condition":{"Var":"Jupiter_Dialog_Stage", "Val":1}, "Options":[{"Text":"Pick it up","SetFlag":{"Var":"Jupiter_Mushroom", "Val":true}}, {"Text":"Leave it"}]}
 ]

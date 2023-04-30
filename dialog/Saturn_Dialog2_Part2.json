@@ -1,0 +1,11 @@
+[
+    {"Name":"Saturn", "Text":"Excellent!!!", "SetFlag":{"Var":"Saturn_Dialog_Stage", "Val":2}},
+    {"Name":"Saturn", "Text":"Oh, how I do adore you my small and moderately useful creature!"},
+    {"Name":"Saturn", "Text":"This is exactly what I wanted..."},
+    {"Name":"Saturn", "Text":"..."},
+    {"Name":"Saturn", "Text":"*looking at the mirror*"},
+    {"Name":"Saturn", "Text":"..."},
+    {"Name":"Saturn", "Text":"*still looking...*"},
+    {"Name":"Saturn", "Text":"..."},
+    {"Name":"Saturn", "Text":"*I don't think she knows you're here anymore*", "Options":[{"Text":"Anything else I can do for you?", "Link":"Saturn_Dialog3_Part1"}, {"Text":"I'm gonna..go..."}]}
+]

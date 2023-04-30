@@ -1,0 +1,5 @@
+[
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"Difficult? What do you..."},
+    {"Name":"Saturn", "Emotion":"Fury", "Text":"Y-You dare...!"},
+    {"Name":"Saturn", "Emotion":"Angry", "Text":"...Are you telling me that I'm....flawed?", "Options":[{"Text":"Maybe 'difficult' was a strong word, I'm sorry if that made you feel attacked. But unfortunately, your self-absorbed actions are surely placing a strain on the people around you, and if they're unwilling to cooperate with your demands, it could end up pushing them away.","Link":"Saturn_Dialog2_Part2_AngryDifficult2"}]}
+]

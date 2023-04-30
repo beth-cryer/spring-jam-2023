@@ -1,0 +1,7 @@
+[
+    {"Name":"Saturn", "Text":"..."},
+    {"Name":"Saturn", "Emotion":"Angry", "Text":"Excuse me?"},
+    {"Name":"Saturn", "Emotion":"Angry", "Text":"Are you for real?"},
+    {"Name":"Saturn", "Emotion":"Angry", "Text":"You clearly know nothing."},
+    {"Name":"Saturn", "Emotion":"Angry", "Text":"Begone, worm.", "Options":[{"Text":"Okay","SetFlag":{"Var":"Saturn_Angered", "Val":true}}, {"Text":"No", "Link":"Saturn_Dialog1_Part1_Stubborn"}]}
+]

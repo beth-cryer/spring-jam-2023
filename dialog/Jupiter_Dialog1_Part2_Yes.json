@@ -3,8 +3,11 @@
     {"Name":"Jupiter", "Text":"oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo"},
     {"Name":"Jupiter", "Text":"ooooooooooooooooooooooooooooooooooooooooooooooo"},
     {"Name":"Jupiter", "Text":"thats awesome...."},
-    {"Name":"Jupiter", "Text":"lets get lit...haha.."},
+    {"Name":"Jupiter", "Text":"lets do it...haha.."},
     {"Name":"Jupiter", "Text":"go get some gear, girl...geargirl....ehe...."},
-    {"Name":"Jupiter", "Text":"like...the alien guy....h.r. geargirl.... (supressing hysterics)"},
+    {"Name":"Jupiter", "Text":"like...it's the alien guy..."},
+    {"Name":"Jupiter", "Text":"...h.r. geargirl.... *supressing hysterics*"},
+    {"Name":"Jupiter", "Text":"*he is still giggling*"},
+    {"Name":"Jupiter", "Text":"*you're not even sure what he was referencing*"},
     {"Name":"[New Mission]", "Text":"Find illict substances in the meadow", "SetFlag":{"Var":"Jupiter_Dialog_Stage","Val":1}}
 ]

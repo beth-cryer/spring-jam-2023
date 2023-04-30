@@ -1,0 +1,4 @@
+[
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"wh....what do you mean, abrasive?"},
+    {"Name":"Saturn", "Emotion":"Angry", "Text":"What's wrong with my personality?", "Options":[{"Text":"Look....even if your rings are pretty, you need to consider how your words might make other people feel. You seem to suffer from a superiority complex which creates a distance between you and those around you. Don't worry though! We can work through it together, if you'd like?","Link":"Saturn_Dialog2_Part3_Angry"}]}
+]

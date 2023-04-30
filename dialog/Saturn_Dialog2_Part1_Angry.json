@@ -1,0 +1,6 @@
+[
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"*sniffle* gh.....have you returned to ridicule me?"},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"you wouldn't be the first"},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"just because I'm gorgeous they're all jealous of me"},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"I get sooooo much hate....", "Options":[{"Text":"Do you think it could be your personality that they find abrasive?","Link":"Saturn_Dialog2_Part2_AngryAbrasive"}, {"Text":"That sucks. Bullying is wrong, even if you can be...difficult", "Link":"Saturn_Dialog2_Part2_AngryDifficult"}]}
+]

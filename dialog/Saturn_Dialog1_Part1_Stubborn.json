@@ -1,0 +1,16 @@
+[
+    {"Name":"Saturn", "Text":"No....", "SetFlag":{"Var":"Saturn_Angered", "Val":true}},
+    {"Name":"Saturn", "Emotion":"Angry", "Text":"No!?"},
+    {"Name":"Saturn", "Emotion":"Angry", "Text":"NO!????"},
+    {"Name":"Saturn", "Emotion":"Fury", "Text":"NO!!!!!!!!!!!"},
+    {"Name":"Saturn", "Emotion":"Fury", "Text":"!!!!!!!!!!!!!"},
+    {"Name":"Saturn", "Emotion":"Angry", "Text":"...."},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":",,,,,"},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"...why noottttt....."},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"why are you making my like so difficultttt"},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"how come nobody likes meeeee"},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"when i'm so cool and smart and pretty!!!"},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"it's not FAAAIIIIRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR"},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRrrrrrrrrrrrrrrrr,,,,,,"},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"*ugly crying, loudly*", "Options":[{"Text":"I'll come back later", "SetFlag":{"Var":"Saturn_Dialog_Stage", "Val":1}}]}
+]

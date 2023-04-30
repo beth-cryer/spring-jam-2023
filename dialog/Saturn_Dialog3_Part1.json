@@ -1,0 +1,4 @@
+[
+    {"Name":"Saturn", "Text":"..."},
+    {"Name":"Saturn", "Text":"*I still don't think she knows you're here anymore*", "Options":[{"Text":"Anything else I can do for you?", "Link":"Saturn_Dialog3_Part2"}, {"Text":"Uh, hello?", "Link":"Saturn_Dialog3_Part2"}, {"Text":"I'm gonna..go..."}]}
+]

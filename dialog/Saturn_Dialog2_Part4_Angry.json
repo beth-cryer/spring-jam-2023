@@ -1,0 +1,6 @@
+[
+    {"Name":"Saturn", "Text":"That...would be good, I think."},
+    {"Name":"Saturn", "Text":"Thank you, human."},
+    {"Name":"Saturn", "Text":"Let me know if...you have need of me in future. I...owe you one?"},
+    {"Name":"Saturn", "Text":"Fare thee well....", "SetFlag":{"Var":"Saturn_Dialog_Stage", "Val":3}}
+]

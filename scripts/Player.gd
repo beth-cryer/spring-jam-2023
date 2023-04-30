@@ -1,5 +1,7 @@
 extends KinematicBody
 
+onready var GameController = get_tree().get_current_scene()
+
 export var speed = 1.25;
 export var fall_acceleration = 5.0;
 
@@ -9,6 +11,9 @@ func _ready():
 	pass
 
 func _physics_process(delta):
+	if GameController.dialogOpen or GameController.telescopeMode:
+		return
+		
 	var direction = Vector3.ZERO
 
 	if Input.is_action_pressed("move_right"):

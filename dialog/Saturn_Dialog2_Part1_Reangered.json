@@ -1,0 +1,5 @@
+[
+    {"Name":"Saturn", "Text":"...you dare to betray me..."},
+    {"Name":"Saturn", "Emotion":"Angry", "Text":"After all I've sacrificed for a little speck of dust like you...."},
+    {"Name":"Saturn", "Emotion":"Fury", "Text":"RESCIND YOUR STATEMENT AND APOLOGISE AT ONCE, OR THERE WILL BE CONSEQUENCES.", "Options":[{"Text":"No, I don't think I will", "Link":"Saturn_Dialog1_Part1_Stubborn"}, {"Text":"Yes, ma'am", "Link":"Saturn_Dialog2_Part1_Apology" }]}
+]

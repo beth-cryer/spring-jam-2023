@@ -24,32 +24,33 @@ func _process(delta):
 		Text.text = ""
 		return
 	
-	#Camera movement
-	rotation_velocity = rotation_velocity.linear_interpolate(camera_input * SENSITIVITY, delta * SMOOTHING)
-	Cam.rotate_x(-deg2rad(rotation_velocity.y))
-	rotate_y(-deg2rad(rotation_velocity.x))
-	
-	Cam.rotation_degrees.x = clamp(Cam.rotation_degrees.x, -90, 90)
-	camera_input = Vector2.ZERO
+	if !GameController.dialogOpen:
+		#Camera movement
+		rotation_velocity = rotation_velocity.linear_interpolate(camera_input * SENSITIVITY, delta * SMOOTHING)
+		Cam.rotate_x(-deg2rad(rotation_velocity.y))
+		rotate_y(-deg2rad(rotation_velocity.x))
+		
+		Cam.rotation_degrees.x = clamp(Cam.rotation_degrees.x, -90, 90)
+		camera_input = Vector2.ZERO
 
-	#Raycast check
-	if Ray.is_colliding():
-		#Check if planet, get name if so
-		var planet = Ray.get_collider()
-		if (planet.get_parent().name == "Planets"):
-			Text.text = planet.name
-			hoveredPlanet = planet
-	else:
-		hoveredPlanet = null
-		Text.text = ""
-	
-	#Begin dialogue
-	if hoveredPlanet != null and !GameController.dialogOpen and hoveredPlanet.has_method("nextDialog"):
-		if Input.is_action_just_pressed("ui_accept"):
-			var nextDialog = hoveredPlanet.nextDialog()
-			if (nextDialog != ""):		
-				var dialogBox = load("res://prefabs/DialogBox.tscn")
-				var dialogInst = dialogBox.instance();
-				dialogInst.dialogPath = nextDialog									
-				Canvas.add_child(dialogInst)
-				GameController.dialogOpen = true
+		#Raycast check
+		if Ray.is_colliding():
+			#Check if planet, get name if so
+			var planet = Ray.get_collider()
+			if (planet.get_parent().name == "Planets"):
+				Text.text = planet.name
+				hoveredPlanet = planet
+		else:
+			hoveredPlanet = null
+			Text.text = ""
+		
+		#Begin dialogue
+		if hoveredPlanet != null and hoveredPlanet.has_method("nextDialog"):
+			if Input.is_action_just_pressed("click"):
+				var nextDialog = hoveredPlanet.nextDialog()
+				if (nextDialog != ""):		
+					var dialogBox = load("res://prefabs/DialogBox.tscn")
+					var dialogInst = dialogBox.instance();
+					dialogInst.dialogPath = nextDialog									
+					Canvas.add_child(dialogInst)
+					GameController.dialogOpen = true

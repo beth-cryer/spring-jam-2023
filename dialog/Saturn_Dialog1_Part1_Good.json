@@ -1,0 +1,6 @@
+[
+    {"Name":"Saturn", "Text":"Ohoho, finally!!!! One who appreciates the majesty of one such as I!", "SetFlag":{"Var":"Saturn_Angered", "Val":false}},
+    {"Name":"Saturn", "Text":"So many of the phillistines in this galaxy are sorely lacking in that regard. No respect!"},
+    {"Name":"Saturn", "Text":"Tell me, mortal, how would you like an opportunity to display your deference and devotion to mineself?"},
+    {"Name":"Saturn", "Text":"I daresay it would lend some meaning to your comparatively small and insignificant existence! Mhmhm!", "Options":[{"Text":"Yeah I'm kind of a speck of tiny dust", "Link":"Saturn_Dialog1_Part2"}, {"Text":"I don't know if I like being spoken to like that", "Link":"Saturn_Dialog1_Part1_Angry"}]}
+]

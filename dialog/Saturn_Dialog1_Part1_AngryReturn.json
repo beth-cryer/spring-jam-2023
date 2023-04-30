@@ -1,0 +1,4 @@
+[
+    {"Name":"Saturn", "Emotion":"Angry", "Text":"Oh? The worm comes crawling back?"},
+    {"Name":"Saturn", "Emotion":"Angry", "Text":"Does it wish to seek forgiveness? (it should)", "Options":[{"Text":"Yes, your Royal Highness","SetFlag":{"Var":"Saturn_Angered", "Val":false}, "Link":"Saturn_Dialog1_Part1_Good"}, {"Text":"No", "Link":"Saturn_Dialog1_Part1_Stubborn"}]}
+]

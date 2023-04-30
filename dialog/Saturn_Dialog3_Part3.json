@@ -1,0 +1,13 @@
+[
+    {"Name":"", "Text":"She turns her eyes to you, a look of fury brewing on her face."},
+    {"Name":"Saturn", "Emotion":"Fury", "Text":"DON'T YELL AT ME, LITTLE TINY THING"},
+    {"Name":"Saturn", "Emotion":"Fury", "Text":"I WAS HAVING SO MUCH FUN LOOKING AT MY GORGEOUS GORGEOUS RINGS THAT ARE THE TALK OF THE GALAXY"},
+    {"Name":"Saturn", "Emotion":"Fury", "Text":"THEY'RE SO BEAUTIFUL. WHY WOULD I NEED ANYTHING ELSE"},
+    {"Name":"Saturn", "Emotion":"Angry", "Text":"I'M SO HAPPY ON MY OWN. JUST ME AND MY BEAUTIFUL RI- MY WONDERFUL...MY...my..."},
+    {"Name":"", "Text":"Her eyes start to water."},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"oh god...."},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"it's meaningless, isn't it"},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"what's the point in having this wonderful gift to share when nobody wants to be around me"},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"you're the only one that will talk to me"},
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"i'm gonna be alone forever", "Options":[{"Text":"That's not true. You said it yourself, you're the one keeping yourself isolated. It doesn't have to be that way.", "Link":"Saturn_Dialog3_Part4"}, {"Text":"Probably. Bye"}]}
+]

@@ -2,7 +2,7 @@
     {"Name":"Jupiter", "Text":"thats cool thats cool...."},
     {"Name":"Jupiter", "Text":"no pressure"},
     {"Name":"Jupiter", "Text":"uuhhhhhh since youre here n all tho."},
-    {"Name":"Jupiter", "Text":"could you get me a lil something hahhaa"},
-    {"Name":"Jupiter", "Text":"we can vibe while i get liiiiiiitt....aha"},
+    {"Name":"Jupiter", "Text":"could you get me a lil somethin to take off the edge hahhaa"},
+    {"Name":"Jupiter", "Text":"we can vibe together while i get liiiiiiitt....aha"},
     {"Name":"[New Mission]", "Text":"Find illict substances in the meadow", "SetFlag":{"Var":"Jupiter_Dialog_Stage","Val":1}}
 ]

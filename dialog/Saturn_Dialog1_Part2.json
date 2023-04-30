@@ -1,0 +1,10 @@
+[
+    {"Name":"Saturn", "Text":"Ahh, of course you accept! Who among your tiny kin would deny my majesty?"},
+    {"Name":"Saturn", "Text":"Now!"},
+    {"Name":"Saturn", "Text":"I have heard tell of a device found on your homeworld, which granteth reflection of one's own form."},
+    {"Name":"Saturn", "Text":"I should much like to have it for my trinket collection. I do love things which shimmer and shine! <3"},
+    {"Name":"Saturn", "Text":"..."},
+    {"Name":"Saturn", "Text":"...Well? Are you waiting for something?"},
+    {"Name":"Saturn", "Text":"Fetch!", "SetFlag":{"Var":"Saturn_Dialog_Stage", "Val":1}}
+
+]

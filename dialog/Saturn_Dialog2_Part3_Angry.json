@@ -1,0 +1,5 @@
+[
+    {"Name":"Saturn", "Emotion":"Sad", "Text":"Are...are you sure?"},
+    {"Name":"Saturn", "Emotion":"Sad","Text":"And you would be willing to aid me in this venture?"},
+    {"Name":"Saturn", "Emotion":"Sad","Text":"...I...could become a planet worthy of friendship?", "Options":[{"Text":"I'll book you in with my therapist this Wednesday, okay?","Link":"Saturn_Dialog2_Part4_Angry"}]}
+]

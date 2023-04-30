@@ -1,0 +1,4 @@
+[
+    {"Name":"Saturn", "Text":"You return so soon?"},
+    {"Name":"Saturn", "Text":"Have you the magical contraption I sent thee for?", "Options":[{"Text":"As you requested, my lady!", "Condition":{"Var":"Saturn_Mirror", "Val":true}, "Link":"Saturn_Dialog2_Part2"}, {"Text":"Not yet..."}, {"Text":"I'm not doing your bidding any longer!", "Link":"Saturn_Dialog2_Part1_Reangered"}]}
+]
