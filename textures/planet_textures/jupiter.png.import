@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/neptune.png-21a74bf86ada63cbe9ae7725df02e688.s3tc.stex"
-path.etc2="res://.import/neptune.png-21a74bf86ada63cbe9ae7725df02e688.etc2.stex"
+path.s3tc="res://.import/jupiter.png-9b820a540d776573aeb93c9260e34421.s3tc.stex"
+path.etc2="res://.import/jupiter.png-9b820a540d776573aeb93c9260e34421.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/neptune.png"
-dest_files=[ "res://.import/neptune.png-21a74bf86ada63cbe9ae7725df02e688.s3tc.stex", "res://.import/neptune.png-21a74bf86ada63cbe9ae7725df02e688.etc2.stex" ]
+source_file="res://textures/planet_textures/jupiter.png"
+dest_files=[ "res://.import/jupiter.png-9b820a540d776573aeb93c9260e34421.s3tc.stex", "res://.import/jupiter.png-9b820a540d776573aeb93c9260e34421.etc2.stex" ]
 
 [params]
 

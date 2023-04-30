@@ -15,10 +15,6 @@ var hoveredPlanet;
 var camera_input : Vector2
 var rotation_velocity : Vector2
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 func _input(event):
 	if event is InputEventMouseMotion:
 		camera_input = event.relative
@@ -44,13 +40,14 @@ func _process(delta):
 			Text.text = planet.name
 			hoveredPlanet = planet
 	else:
+		hoveredPlanet = null
 		Text.text = ""
 	
 	#Begin dialogue
 	if hoveredPlanet != null and !GameController.dialogOpen and hoveredPlanet.has_method("nextDialog"):
-		var nextDialog = hoveredPlanet.nextDialog()
-		if (nextDialog != ""):
-			if Input.is_action_just_pressed("ui_accept"):				
+		if Input.is_action_just_pressed("ui_accept"):
+			var nextDialog = hoveredPlanet.nextDialog()
+			if (nextDialog != ""):		
 				var dialogBox = load("res://prefabs/DialogBox.tscn")
 				var dialogInst = dialogBox.instance();
 				dialogInst.dialogPath = nextDialog									

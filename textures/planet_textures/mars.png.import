@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/mercury.png-5d08cf007ea835c2f31c772e5180e7ad.s3tc.stex"
-path.etc2="res://.import/mercury.png-5d08cf007ea835c2f31c772e5180e7ad.etc2.stex"
+path.s3tc="res://.import/mars.png-53d42a57c51cd83d0bc942762df33b02.s3tc.stex"
+path.etc2="res://.import/mars.png-53d42a57c51cd83d0bc942762df33b02.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/mercury.png"
-dest_files=[ "res://.import/mercury.png-5d08cf007ea835c2f31c772e5180e7ad.s3tc.stex", "res://.import/mercury.png-5d08cf007ea835c2f31c772e5180e7ad.etc2.stex" ]
+source_file="res://textures/planet_textures/mars.png"
+dest_files=[ "res://.import/mars.png-53d42a57c51cd83d0bc942762df33b02.s3tc.stex", "res://.import/mars.png-53d42a57c51cd83d0bc942762df33b02.etc2.stex" ]
 
 [params]
 

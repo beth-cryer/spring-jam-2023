@@ -1,4 +1,4 @@
 extends CSGSphere
 
 func nextDialog():
-	return "Jupiter_Dialog1_Part1"
+	return "Saturn_Dialog1_Part1"

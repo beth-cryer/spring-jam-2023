@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://scripts/Jupiter.gd" type="Script" id=1]
 [ext_resource path="res://textures/telescope.png" type="Texture" id=2]
@@ -13,18 +13,21 @@
 [ext_resource path="res://scripts/Telescope.gd" type="Script" id=11]
 [ext_resource path="res://scripts/CameraThirdPerson.gd" type="Script" id=12]
 [ext_resource path="res://fonts/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=13]
-[ext_resource path="res://textures/saturn.png" type="Texture" id=14]
-[ext_resource path="res://textures/mars.png" type="Texture" id=15]
-[ext_resource path="res://textures/jupiter.png" type="Texture" id=16]
-[ext_resource path="res://textures/neptune.png" type="Texture" id=17]
-[ext_resource path="res://textures/mercury.png" type="Texture" id=18]
-[ext_resource path="res://textures/venus.png" type="Texture" id=19]
-[ext_resource path="res://textures/uranus.png" type="Texture" id=20]
+[ext_resource path="res://textures/planet_textures/saturn.png" type="Texture" id=14]
+[ext_resource path="res://textures/planet_textures/mars.png" type="Texture" id=15]
+[ext_resource path="res://textures/planet_textures/jupiter.png" type="Texture" id=16]
+[ext_resource path="res://textures/planet_textures/neptune.png" type="Texture" id=17]
+[ext_resource path="res://textures/planet_textures/mercury.png" type="Texture" id=18]
+[ext_resource path="res://textures/planet_textures/venus.png" type="Texture" id=19]
+[ext_resource path="res://textures/planet_textures/uranus.png" type="Texture" id=20]
 [ext_resource path="res://textures/sky.png" type="Texture" id=21]
 [ext_resource path="res://textures/lantern.png" type="Texture" id=22]
 [ext_resource path="res://textures/player_walk.png" type="Texture" id=23]
 [ext_resource path="res://scripts/Saturn.gd" type="Script" id=24]
+[ext_resource path="res://textures/planet_textures/pluto.png" type="Texture" id=25]
 [ext_resource path="res://scripts/GameController.gd" type="Script" id=26]
+[ext_resource path="res://textures/shroom1.png" type="Texture" id=27]
+[ext_resource path="res://scripts/Shroom.gd" type="Script" id=28]
 
 [sub_resource type="PanoramaSky" id=24]
 panorama = ExtResource( 21 )
@@ -121,6 +124,20 @@ shader_param/amplitude = 0.025
 shader_param/speed = 1.0
 shader_param/texture_albedo = ExtResource( 6 )
 
+[sub_resource type="SpatialMaterial" id=33]
+flags_transparent = true
+albedo_texture = ExtResource( 27 )
+rim_enabled = true
+rim = 0.3
+rim_tint = 1.0
+
+[sub_resource type="SphereShape" id=35]
+radius = 0.5
+
+[sub_resource type="DynamicFont" id=36]
+size = 14
+font_data = ExtResource( 13 )
+
 [sub_resource type="ShaderMaterial" id=12]
 shader = ExtResource( 5 )
 shader_param/albedo = Color( 1, 1, 1, 1 )
@@ -162,6 +179,12 @@ rim_enabled = true
 rim = 0.3
 rim_tint = 1.0
 
+[sub_resource type="SphereShape" id=32]
+radius = 0.2
+
+[sub_resource type="SphereShape" id=34]
+radius = 0.5
+
 [sub_resource type="SpatialMaterial" id=16]
 flags_unshaded = true
 albedo_texture = ExtResource( 14 )
@@ -169,6 +192,10 @@ albedo_texture = ExtResource( 14 )
 [sub_resource type="SpatialMaterial" id=21]
 flags_unshaded = true
 albedo_texture = ExtResource( 14 )
+
+[sub_resource type="SpatialMaterial" id=30]
+flags_unshaded = true
+albedo_texture = ExtResource( 25 )
 
 [sub_resource type="SpatialMaterial" id=17]
 flags_unshaded = true
@@ -230,12 +257,12 @@ omni_attenuation = 2.63902
 [node name="Fire" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.297505, 1.2768, -2.68188 )
 light_color = Color( 0.772549, 0.47451, 0.407843, 1 )
-light_energy = 2.467
+light_energy = 4.047
 omni_range = 2.454
 omni_attenuation = 2.92818
 
 [node name="PlayerNode" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.945, -2.307 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.945, -2.42826 )
 
 [node name="Player" type="KinematicBody" parent="PlayerNode"]
 script = ExtResource( 9 )
@@ -276,6 +303,28 @@ material_override = SubResource( 11 )
 shaded = true
 texture = ExtResource( 6 )
 
+[node name="Shroom1" type="Sprite3D" parent="Scenery"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 2.91916, 0.6, -3.78442 )
+material_override = SubResource( 33 )
+shaded = true
+texture = ExtResource( 27 )
+script = ExtResource( 28 )
+dialogPath = "Jupiter_Mushroom"
+condition = {
+"Val": "1",
+"Var": "Jupiter_Dialog_Stage"
+}
+
+[node name="Area" type="Area" parent="Scenery/Shroom1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Scenery/Shroom1/Area"]
+shape = SubResource( 35 )
+
+[node name="Label3D" type="Label3D" parent="Scenery/Shroom1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.354703, 0 )
+text = "[E] Interact"
+font = SubResource( 36 )
+
 [node name="Grass1_2" type="Sprite3D" parent="Scenery"]
 transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 0.819826, 0.6, -0.48506 )
 material_override = SubResource( 11 )
@@ -297,12 +346,28 @@ transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1, 0.472647, 0.6, -0.293636 )
 material_override = SubResource( 13 )
 texture = ExtResource( 8 )
 
-[node name="Telescope" type="Sprite3D" parent="Scenery"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.515507, 0.776426, -2.59546 )
+[node name="TelescopeSprite" type="Sprite3D" parent="Scenery"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.614564, 0.776426, -2.59546 )
 material_override = SubResource( 4 )
 shaded = true
 texture = ExtResource( 2 )
+
+[node name="Telescope" type="StaticBody" parent="Scenery"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.614564, 0.776426, -2.59546 )
 script = ExtResource( 11 )
+
+[node name="Label3D" type="Label3D" parent="Scenery/Telescope"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.354703, 0 )
+text = "[E] Interact"
+font = SubResource( 36 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Scenery/Telescope"]
+shape = SubResource( 32 )
+
+[node name="Area" type="Area" parent="Scenery/Telescope"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Scenery/Telescope/Area"]
+shape = SubResource( 34 )
 
 [node name="Planets" type="Spatial" parent="."]
 
@@ -324,34 +389,45 @@ radius = 1.83747
 height = 0.0813776
 sides = 16
 
+[node name="Pluto" type="CSGSphere" parent="Planets"]
+transform = Transform( 1, 0, 0, 0, 0.969386, 0.245545, 0, -0.245545, 0.969386, -26.63, 21.4244, 5.43208 )
+visible = false
+use_collision = true
+material = SubResource( 30 )
+
 [node name="Mars" type="CSGSphere" parent="Planets"]
 transform = Transform( 1, 0, 0, 0, 0.992317, 0.123723, 0, -0.123723, 0.992317, -17.3704, 11.2031, -7.23968 )
+visible = false
 use_collision = true
 material = SubResource( 17 )
 
 [node name="Jupiter" type="CSGSphere" parent="Planets"]
-transform = Transform( 1.69515, 1.05319, 0.131313, -1.06135, 1.68213, 0.209729, 0, -0.247445, 1.98463, -24.093, 30.347, 18.335 )
+transform = Transform( 1.69515, 1.05319, 0.131313, -1.06135, 1.68213, 0.209729, 0, -0.247445, 1.98463, -24.093, 14.828, 18.335 )
 use_collision = true
 material = SubResource( 18 )
 script = ExtResource( 1 )
 
 [node name="Neptune" type="CSGSphere" parent="Planets"]
 transform = Transform( 1.5, 0, 0, 0, 1.48848, 0.185584, 0, -0.185584, 1.48848, 10.2777, 23.1315, 1.1613 )
+visible = false
 use_collision = true
 material = SubResource( 19 )
 
 [node name="Uranus" type="CSGSphere" parent="Planets"]
 transform = Transform( 1.5, 0, 0, 0, 1.48848, 0.185584, 0, -0.185584, 1.48848, 19.9972, 23.1315, -17.2442 )
+visible = false
 use_collision = true
 material = SubResource( 23 )
 
 [node name="Mercury" type="CSGSphere" parent="Planets"]
 transform = Transform( 1.2, 0, 0, 0, 1.19078, 0.148467, 0, -0.148467, 1.19078, 10.2777, 17.0909, 13.6312 )
+visible = false
 use_collision = true
 material = SubResource( 20 )
 
 [node name="Venus" type="CSGSphere" parent="Planets"]
 transform = Transform( 1.5, 0, 0, 0, 1.48848, 0.185584, 0, -0.185584, 1.48848, -4.07385, 17.0909, 13.6312 )
+visible = false
 use_collision = true
 material = SubResource( 22 )
 
@@ -367,3 +443,8 @@ margin_bottom = 34.0
 custom_fonts/normal_font = SubResource( 15 )
 text = "TESTINGINGJG"
 fit_content_height = true
+
+[connection signal="body_entered" from="Scenery/Shroom1/Area" to="Scenery/Shroom1" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Scenery/Shroom1/Area" to="Scenery/Shroom1" method="_on_Area_body_exited"]
+[connection signal="body_entered" from="Scenery/Telescope/Area" to="Scenery/Telescope" method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Scenery/Telescope/Area" to="Scenery/Telescope" method="_on_Area_body_exited"]

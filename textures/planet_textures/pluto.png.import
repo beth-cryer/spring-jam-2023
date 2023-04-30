@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/mars.png-9ecd7e3b9cbdb8e26f077121e01de758.s3tc.stex"
-path.etc2="res://.import/mars.png-9ecd7e3b9cbdb8e26f077121e01de758.etc2.stex"
+path.s3tc="res://.import/pluto.png-5ec8c1d4ca808dc7e8c03b0882efcd3c.s3tc.stex"
+path.etc2="res://.import/pluto.png-5ec8c1d4ca808dc7e8c03b0882efcd3c.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/mars.png"
-dest_files=[ "res://.import/mars.png-9ecd7e3b9cbdb8e26f077121e01de758.s3tc.stex", "res://.import/mars.png-9ecd7e3b9cbdb8e26f077121e01de758.etc2.stex" ]
+source_file="res://textures/planet_textures/pluto.png"
+dest_files=[ "res://.import/pluto.png-5ec8c1d4ca808dc7e8c03b0882efcd3c.s3tc.stex", "res://.import/pluto.png-5ec8c1d4ca808dc7e8c03b0882efcd3c.etc2.stex" ]
 
 [params]
 

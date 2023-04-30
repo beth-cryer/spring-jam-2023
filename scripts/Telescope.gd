@@ -1,19 +1,32 @@
-extends Sprite3D
+extends StaticBody
 
-onready var player = get_tree().get_current_scene().find_node("PlayerNode")
-onready var camTP = get_tree().get_current_scene().find_node("CameraThirdPerson")
-onready var camFP = get_tree().get_current_scene().find_node("CameraFirstPerson").get_node("Camera")
+onready var Player = get_tree().get_current_scene().find_node("PlayerNode")
+onready var CamTP = get_tree().get_current_scene().find_node("CameraThirdPerson")
+onready var CamFP = get_tree().get_current_scene().find_node("CameraFirstPerson").get_node("Camera")
+onready var InteractLabel = $"Label3D"
 
-# Called when the node enters the scene tree for the first time.
+var interactArea = false
+
 func _ready():
-	pass # Replace with function body.
-
+	InteractLabel.hide()
 
 func _process(delta):
-	if Input.is_action_just_released("interact"):
-		if (camFP.is_current()):
-			camTP.make_current()
-			player.show()
+	if interactArea and Input.is_action_just_released("interact"):
+		if (CamFP.is_current()):
+			CamTP.make_current()
+			Player.show()
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)			
 		else:
-			camFP.make_current()
-			player.hide()
+			CamFP.make_current()
+			Player.hide()
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _on_Area_body_entered(body):
+	if body.name == "Player":
+		interactArea = true
+		InteractLabel.show()
+
+func _on_Area_body_exited(body):
+	if body.name == "Player":
+		interactArea = false
+		InteractLabel.hide()

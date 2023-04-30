@@ -1,0 +1,10 @@
+[
+    {"Name":"Saturn", "Text":"Ahhhhh....a human"},
+    {"Name":"Saturn", "Text":"I gather you have come to gaze upon mine rings?"},
+    {"Name":"Saturn", "Text":"Well then....look all you like!"},
+    {"Name":"Saturn", "Text":"..."},
+    {"Name":"Saturn", "Text":"Magnificent, are they not?"},
+    {"Name":"Saturn", "Text":"..."},
+    {"Name":"Saturn", "Text":"Radiant? Dazzling? Awe-inspiring, even?"},
+    {"Name":"Saturn", "Text":"Ahem. Excuse me! Say something!", "Options":[{"Text":"They're very nice","Link":"Jupiter_Dialog1_Part1_Good"}, {"Text":"Jupiter's are better", "Link":"Jupiter_Dialog1_Part1_Bad"}]}
+]

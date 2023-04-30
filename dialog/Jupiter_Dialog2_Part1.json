@@ -1,0 +1,4 @@
+[
+    {"Name":"Jupiter", "Text":"youre back!!!"},
+    {"Name":"Jupiter", "Text":"did u get the stufffff....", "Options":[{"Text":"I found a mushroom", "Condition":{"Var":"Jupiter_Mushroom", "Val":true}}, {"Text":"Sorry, no :("}]}
+]

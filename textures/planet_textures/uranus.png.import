@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/saturn.png-a3760e44e1c5043979dc40b2ebd0fa56.s3tc.stex"
-path.etc2="res://.import/saturn.png-a3760e44e1c5043979dc40b2ebd0fa56.etc2.stex"
+path.s3tc="res://.import/uranus.png-3041e1c2cda249ee33719a0cc650e4d7.s3tc.stex"
+path.etc2="res://.import/uranus.png-3041e1c2cda249ee33719a0cc650e4d7.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/saturn.png"
-dest_files=[ "res://.import/saturn.png-a3760e44e1c5043979dc40b2ebd0fa56.s3tc.stex", "res://.import/saturn.png-a3760e44e1c5043979dc40b2ebd0fa56.etc2.stex" ]
+source_file="res://textures/planet_textures/uranus.png"
+dest_files=[ "res://.import/uranus.png-3041e1c2cda249ee33719a0cc650e4d7.s3tc.stex", "res://.import/uranus.png-3041e1c2cda249ee33719a0cc650e4d7.etc2.stex" ]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
-flags/filter=false
+flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=1

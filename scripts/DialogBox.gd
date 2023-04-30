@@ -6,6 +6,7 @@ export var dialogPath : String = ""
 export(float) var textSpeed = 0.05
 
 var dialog
+var setFlag
 var phraseNum = 0
 var finished = false
 var options = []
@@ -16,7 +17,7 @@ var next_json = ""
 func _ready():
 	$Timer.wait_time = textSpeed
 	dialog = getDialog()
-	assert(dialog, "Dialog not found")
+	assert(dialog, "Dialog not found: " + str(dialogPath))
 	nextPhrase()
 
 func getDialog() -> Array:
@@ -44,11 +45,9 @@ func nextPhrase() -> void:
 		return
 	
 	#Condition (skip this phrase if condition false)
-	if dialog[phraseNum].has("Condition"):
-		if GameController.flags_dict.has(dialog[phraseNum]["Condition"]):
-			if GameController.flags_dict.get(dialog[phraseNum]["Condition"]) == false:
-				phraseNum += 1
-				return
+	if condition(dialog[phraseNum]) == false:
+		phraseNum += 1
+		return
 	
 	finished = false
 	
@@ -72,16 +71,23 @@ func nextPhrase() -> void:
 		$Timer.start()
 		yield($Timer, "timeout")
 	
+	if dialog[phraseNum].has("SetFlag"):
+		setFlag(dialog[phraseNum]["SetFlag"])
+	
 	#Options (don't do next phrase until option picked)
 	if dialog[phraseNum].has("Options"):
-		options = dialog[phraseNum]["Options"]
+		var optionsToPick = dialog[phraseNum]["Options"]
+		options = []
+		#Only add noncondition options / options with fulfilled conditions
+		for opt in optionsToPick:
+			if condition(opt) != false:
+				options.append(opt)
 		for i in range(options.size()):
 			$Options.bbcode_text += str(i+1) + ". " + options[i]["Text"] + "\n"
 		waitingForResponse = true
 		return
 
-	finished = true
-	phraseNum += 1
+	phraseFinished()
 	return
 
 func linkToDialog(newDialogPath):
@@ -93,11 +99,30 @@ func linkToDialog(newDialogPath):
 	assert(dialog, "Dialog not found")
 	nextPhrase()
 
-func _process(delta):
+func condition(dialogCondition):
+	if dialogCondition.has("Condition"):
+		var cond = dialogCondition["Condition"]
+		if GameController.flags_dict.has(cond["Var"]):
+			return GameController.flags_dict.get(cond["Var"]) == cond["Val"]
+	return
+
+func setFlag(flagSetter):
+	if GameController.flags_dict.has(flagSetter["Var"]):
+		GameController.flags_dict[flagSetter["Var"]] = flagSetter["Val"]
+
+func phraseFinished():
+	finished = true
+	phraseNum += 1
+
+func _process(delta):			
 	if waitingForResponse:
 		for i in range(options.size()):
 			if Input.is_action_just_pressed("opt_"+str(i+1)):
-				linkToDialog(options[i]["Link"])
+				if options[i].has("SetFlag"):
+					setFlag(options[i]["SetFlag"])
+				if options[i].has("Link"):
+					linkToDialog(options[i]["Link"])
+				phraseFinished()
 		if !finished:
 			return
 		else:
@@ -106,10 +131,6 @@ func _process(delta):
 	$Indicator.visible = finished
 	if Input.is_action_just_pressed("ui_accept"):
 		if finished:
-			if dialog[phraseNum-1].has("SetFlag"):
-				var flagSetter = dialog[phraseNum-1]["SetFlag"]
-				if GameController.flags_dict.has(flagSetter["Var"]):
-					GameController.flags_dict[flagSetter["Var"]] = flagSetter["Val"]
 			nextPhrase()
 		else:
 			$Text.visible_characters = len($Text.text)
